@@ -1,0 +1,349 @@
+/* for desktop or for mobile phone */
+.container {
+  position:relative;
+  margin:0 auto;
+  width:100%;
+}
+
+@media only screen and (max-width: 736px) {
+.container { width: 100%; }
+}
+
+/* Basic Style */
+html,body,div,span,a,ul,li {
+  border:0;
+  font:inherit;
+  font-size:100%;
+  margin:0;
+  padding:0;
+  vertical-align:baseline;
+}
+
+body {
+   line-height:1;
+   background-color: #E8E0F4;
+   cursor: default;
+ }
+
+*{
+  list-style: none;
+}
+ul {
+  list-style:none;
+}
+
+html, body {
+  font:14px/24px sans-serif; 
+  font-weight: 100;
+}
+
+.glyphicon {
+  font-size: 28px;
+  top: 5px;
+}
+
+/* CSS navgation bar */
+.header {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: solid #979797;
+}
+
+/*.scroll-pre {
+  height: 100px;
+  width: 100%;
+  background-color: #E8E0F4;
+  position: fixed;
+}
+*/
+.tablinks {
+    color: #979797;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: -2px;
+}
+
+.glyphicon-music, .glyphicon-th-list, .glyphicon-search{
+  color: #000000;
+}
+
+.active *{
+  color: #810082;
+}
+
+.row{
+  margin-top: 55px;
+  background-color: #E8E0F4;
+  left: 0;
+  right: 0;
+  height:100%;
+}
+
+/* addplaylist css*/
+.addplaylist {
+  background-color: #936AC7;
+  margin-top: 15px;
+  margin-left: 2.5%;
+  margin-right: 2.5%; 
+  border-radius: 4px;
+  width: 95%;  
+  height: 35px;
+  text-align: center;
+}
+
+.addplaylist-text {
+  color: #ffffff;
+  font-size: 15px;
+  position: inherit;
+  vertical-align: text-bottom;
+  margin-top: 5px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-right:20px;
+}
+
+.sortbyartist, .sortbytitle{
+  background-color: #936AC7;
+  margin-top: 10px;
+  border-radius: 4px;
+  height: 35px;
+  width: 150px;
+  box-sizing: border-box;
+  float: right;
+  box-shadow: inset 0px 0px 5px #ffffff;
+  color: #ffffff;
+}
+
+.sortbytitle{
+  float: left;
+}
+
+.sortbyartist-text, .sortbytitle-text{
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  vertical-align: text-bottom;
+  margin-top: 3px;
+  letter-spacing: 1px;
+}
+
+.plus-icon {
+  font-size: 13px;
+  vertical-align: top;
+  margin-right: -2px;
+}
+
+
+.coverpage {
+  width: 50px;
+  height: 50px;
+  background: #D8D8D8;
+  border: solid 1px #979797;
+}
+
+.glyphicon-play{
+  color: #979797;
+  font-size: 20px; 
+  float: right;
+  padding-right: 2px;
+}
+
+.glyphicon-plus-sign{
+  color: #979797;
+  font-size: 20px; 
+  float: right;
+  right: 0;
+}
+
+/* for click on playlist */
+.playlist_name{
+  color: #800080;
+  list-style: none;
+}
+
+
+.playlist-wrap{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid #979797 1px;
+  color: #835797;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+#playlist_name{
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: #835797;
+  font-weight: 100;
+}
+
+#playlist_button{
+  background-color: #936AC7;
+  margin-top: 10px;
+  border-radius: 4px;
+  height: 40px;
+  width: 100px;
+  box-sizing: border-box;
+  float: right;
+  box-shadow: inset 0 0 5px #ffffff;
+  color: #ffffff;
+}
+.coverpage-module {
+  float: left;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.title-module {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.icon-module{
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.songs-text {
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlists-title-module {
+  margin-top: 20px;
+  text-align: left;
+  margin-left:10px;
+}
+
+.playlists-text{
+  color: #835797;
+}
+
+#libraryinsert1{
+  display: block;
+}
+
+#libraryinsert2{
+  display: block;
+}
+
+.playlist-text {
+  width: 100%;
+  color: #979797;
+  text-align: left;
+  margin-left: 10px;
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glyphicon-chevron-right{
+  color: #979797;
+  font-size: 20px; 
+  float: right;
+  right: 0;
+}
+
+
+#album-text{
+  color: #979797;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: -10px;
+}
+
+.playlist-wrap:active {
+  background-color: #800080;
+}
+.col-xs-11, .col-md-11{
+  left: 4%;
+}
+
+/*search page css*/
+.searchbar {
+  background-color: #d3d3d3;
+  margin-top: 15px;
+  margin-left: 2.5%;
+  margin-right: 2.5%; 
+  width: 95%;  
+  height: 35px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input, select, textarea{
+    color: #979797;
+}
+
+textarea:focus, input:focus {
+    color: #979797;
+}
+
+
+/* modal css */
+#overlay{
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    visibility: hidden; 
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto; /* Disable horizontal scroll */
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.2); /* Black w/opacity */
+}
+
+#modal_insert_pos{
+    background-color: #fefefe;
+    margin: 0 auto; /* 15% from the top and centered */
+    margin-top: 200px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    border: 1px solid #d0c4dd;
+    width: 40%;
+    list-style: none;
+    background-color: #d0c4dd; 
+}
+
+#modal_insert{
+    color: #858585;
+}
+
+.modal_playlist{
+  color: #800080;
+  padding-bottom: 20px;
+  cursor: default;
+}
+
+#overlay a {
+    text-decoration: none;
+}
+
+
+#overlay a:hover, .overlay a:focus {
+    color: #818181;
+}
+
+#overlay #close_modal {
+    font-size: 30px;
+    float: right;
+    color: #818181;
+    padding-right: 10px;
+}

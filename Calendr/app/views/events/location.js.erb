@@ -1,0 +1,88 @@
+var mylocation = new google.maps.LatLng(<%= @event.latitude %>,<%= @event.longitude %>)
+var map;
+var infowindow;
+var service;
+//var name;
+var updated_location;
+
+function initMap() {
+	var mapOptions = {
+		zoom :17,
+		center: mylocation,
+		scrollwheel: false
+	};
+	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	var marker = new google.maps.Marker({
+	    position: mylocation,
+	    animation: google.maps.Animation.DROP,
+	    map: map,
+	    label: '<%= @event.location %>',
+	    title: '<%= @event.location %>'
+	});
+	var request = {
+		location: mylocation,
+		radius: 1000,
+		type: ['<%= @event.event_type %>']
+	}
+
+	infowindow = new google.maps.InfoWindow();
+	service = new google.maps.places.PlacesService(map);
+	service.nearbySearch(request,callback);
+}
+
+function callback(results, status) {
+	if (status === google.maps.places.PlacesServiceStatus.OK) {
+	  for (var i = 0; i < results.length; i++) {
+	    createMarker(results[i]);
+		}
+	}
+}
+
+function createMarker(place) {
+	var placeloc = place.geometry.location;
+	var marker = new google.maps.Marker({
+	  map: map,
+	  icon: {
+	  	url: 'http://maps.gstatic.com/mapfiles/circle.png',
+        anchor: new google.maps.Point(10, 10)
+	  },
+	  position: place.geometry.location
+	});
+
+	marker.addListener('click', function(){
+		var request = {
+			reference: place.reference
+		};
+		service.getDetails(request, function(details,status){
+			updated_location = details.formatted_address;
+			infowindow.setContent(
+				'<div id="current-location"><span id="name"><strong>' + details.name + '</strong></span><br>' + 'Rating: '
+                + details.rating + '<br>' + 'Website: '  +  details.website + '<br>' + 'Address: ' 
+				+ '<span id="address">' + details.formatted_address + '</span><br>' + 'Contact: ' + 
+				details.formatted_phone_number+ '<br>' + 
+				'Reviews1: ' + details.reviews[0].text + '<br>' + 'Reviews2: ' 
+				+ details.reviews[1].text + '<br></div>');
+              	infowindow.open(map, marker);
+		});
+	})
+}
+//$('#name').val(name);
+$("#show-map").on("shown.bs.modal", function () {
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(mylocation);
+});
+
+$('#show-map .modal-header').replaceWith('<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title"><%=@event.title %></h4><p>Event Location: <%= @event.location %><br>Event Suggestion: <%= @event.event_type %></p></div>');
+$('#show-map').modal('toggle');
+initMap();
+
+
+$('#update-location').click(function(e){
+	$.ajax({url: rootPath + '/events/' + <%= @event.id %>,
+		data: {'event[location]': updated_location},
+		method: 'PUT',
+		datatype: 'script'
+	});
+});
+

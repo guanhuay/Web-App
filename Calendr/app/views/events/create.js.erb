@@ -1,0 +1,18 @@
+<% if @event.errors.any? %>
+		$('#make-event #errors').html('<%= j render "errors" %>');
+<% else %>
+	var eventData = {
+		id: "<%= @event.id %>",
+		title: "<%= @event.title %>",
+		start: "<%= @event.start.iso8601 %>",
+		end: "<%= @event.end.iso8601 %>"
+	};	
+
+
+	$('#calendar').fullCalendar('renderEvent', eventData, true);
+	$("#upcoming-events").load(location.href + " #upcoming-events>*","");
+	$('#make-event #errors').replaceWith('<div id="errors"></div>')
+	$('#new_event')[0].reset();
+	$('#make-event').modal('hide');
+
+<% end %>

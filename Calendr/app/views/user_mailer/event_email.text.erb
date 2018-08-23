@@ -1,0 +1,10 @@
+Event Notification
+===============================================
+
+You have the following events coming up:
+
+<% @events.each do |event| %>
+   - <%= event.title %> (<%= event.event_type %>) on <%= event.start.strftime("%B %d, %Y") %>
+     The location of this event is: <%= event.location %>
+     
+<% end %>

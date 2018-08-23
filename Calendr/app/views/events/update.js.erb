@@ -1,0 +1,13 @@
+<% if @event.errors.any? %>
+		$('#show-event #errors').html('<%= j render "errors" %>');
+<% else %>
+	$('#show-event #errors').html('');
+	
+	// super slow way to do this :(
+	$("#calendar").fullCalendar("refetchEvents");
+	window.location.reload();
+
+	$('#show-event').modal('hide');
+	$("#upcoming-events").load(location.href + " #upcoming-events>*","");
+	
+<% end %>

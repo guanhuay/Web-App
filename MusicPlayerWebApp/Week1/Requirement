@@ -1,0 +1,39 @@
+Requirement:
+
+Exercise 1
+For this exercise, you'll work through the basics of HTML and CSS by building a basic Music App UI.
+
+Throughout the course you'll build on this Playlist, slowly adding more functionality as each week passes.
+
+Prerequisites
+
+If you haven't written any HTML and CSS before, I recommend going through a tutorial first (See Greg Baker's Intro to the Web Study Guide).
+
+You should also make sure you have a code editor for HTML and CSS. I recommend using Atom or Sublime Text.
+
+Getting started
+
+Download this page skeleton to get started. It contains Bootstrap 3 (I recommend reading through the Bootstrap documentation), an HTML/CSS framework that contains a layout system and a variety of components and icons.
+
+Although you're free to use any HTML/CSS Framework you'd like (or skip the framework all together).
+
+Task
+
+Your objective is to convert the following mockups into a working webpage:
+
+Playlist Mockup
+
+All of the icons in this mock were pulled from Bootstrap's free fonts, which you can look at here.
+
+The square boxes are meant to be images for the playlists. Feel free to get creative! But if you don't want to you can just use grey boxes too ⬜️.
+
+✅ Requirements Checklist
+
+Make sure the width matches the device width (hint: see "Responsive Design" slides from class). 0.5 mark
+HTML must be semantic - that means the elements used should correctly describe their content, and no presentational elements or attributes may be used (for example, `<b>`, `<i>`, `<div style="color: blue;">`, etc). All of the appearance should be written with CSS. 1 mark
+When your playlist.html file is loaded in the browser, it must look the same as the mocks above (although does not need to be perfect down to the last pixel). 5 marks
+The header bar must remain at the top of the page - please demonstrate this by having enough songs on the page that the page must scroll down (hint: see `position: fixed` for the header, and `overflow: scroll` for the list of songs). 0.5 mark
+When clicking on a playlist, the background of that row should become a darker shade of purple (hint: look into the `:active` selector to do this in CSS without the use of JavaScript). 1 mark
+Layout must look correct on a variety of mobile screen sizes (hint: use the device toolbar in Chrome DevTools to emulate iPhone 6, iPhone 6 Plus, and Nexus 5X). 1 mark
+Passing the HTML into an HTML Validator should return no warnings or errors. 1 mark.
+Total: 10 marks

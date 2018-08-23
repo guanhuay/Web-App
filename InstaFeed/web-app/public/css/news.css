@@ -1,0 +1,284 @@
+body {
+  background-color: #fff !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, small, span, label, textarea {
+  color: black !important;
+}
+
+.replyLink{
+  margin-top: 10px;
+  color: blue !important;
+}
+
+/** {
+  color: black;
+}*/
+
+#top {
+  height:40px;
+}
+
+#description {
+  float: left;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.placeholder {
+  height: 20%;
+}
+
+#moreAbout {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  color: #000 !important;
+  /*display: none;*/
+}
+
+#image {
+  padding-top: 20px;
+}
+section{
+  margin-left: 10px;
+}
+.reply, .edit{
+  height: 24px;
+  max-width: 80px;
+  text-align: center;
+  line-height: 24px;
+  padding: 0 0.5rem;
+  float: left;
+}
+#title{
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-family: sans-serif;
+  border-bottom: 2px solid #000;
+}
+
+#titleLink {
+  color: black !important;
+  text-decoration: none;
+}
+
+.news_img {
+  position: relative;
+  margin: 0 auto;
+  max-width: 80%;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 1px #888888;
+}
+
+.enteredLen {
+  color: blue !important;
+}
+
+#comment-body {
+  width: 100%;
+  margin-top: 20px;
+  margin: 0 auto !important;
+}
+
+.comment {
+  margin-top:15px;
+  margin-bottom: 15px;
+  width: 100%;
+  min-height: rem(85);
+  /*padding: rem(16);*/
+  background-color: #fff;
+  display: table-cell;
+  vertical-align: top;
+  border-radius: rem(5);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+}
+
+.two_button{
+  position: absolute;
+  float: left !important;
+  left: 0px !important;
+  max-width: 80% !important;
+}
+.avatar {
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #0094ff;
+  border-radius: 50%;
+  /*background-size: contain;*/
+}
+
+.left-wrapper{
+  margin: 0 auto;
+}
+
+.comment-title {
+  /*margin: 0 auto !important;*/
+  font-size: 15px;
+  color: #000 !important;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.middle-wrapper > p{
+  float: left;
+  margin-left: 15px;
+    /*text-overflow:ellipsis;*/
+}
+
+.add-comment {
+  color: #fff !important;
+  margin-top: 20px !important;
+  width: auto;
+  top: 10px;
+  margin: 0 auto;
+}
+
+.desc{
+  color: #000 !important;
+  border: 0.5px dotted white;
+  max-width: 400px;
+  max-height: 200px;
+  overflow: scroll !important;
+  margin-left: 10px;
+  text-align: left;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.on_site{
+  color: #fff !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  top: 10px;
+  margin: 0 auto;
+}
+
+.publise_time {
+  text-align: right !important;
+  font-size: 13px !important;
+  font-weight: normal;
+}
+
+#invisible {
+  display: none;
+}
+
+#demo1 {
+  display: none;
+}
+
+#preview {
+  margin: 0 auto !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.edit {
+  margin-left: 1%;
+  color: white !important;
+}
+
+/*model*/
+/*comment modal*/
+.modal-header {
+  float: left !important;
+}
+
+#basicModal, #replyModal, #editModal {
+  padding-top: 50px;
+  top: 20%;
+}
+#reply-comment, #edit-comment {
+  display: none;
+}
+
+
+
+/*on-site preview modal*/
+#news {
+  height:85%;
+}
+
+#lightSpeedIn {
+  display:none;
+}
+
+iframe {
+  background-color: #000 !important;
+  width: 100%;
+  height: 100%;
+}
+
+.glyphicon-remove {
+  margin: 0 auto;
+  left: 1%;
+}
+
+.modal-content {
+  display: block;
+  margin: 2em auto;
+  max-width: 1000px;
+  padding: 10px;
+}
+
+[class*="close-"] {
+  border: 2px solid;
+  border-radius: 100%;
+  color: #FFF;
+  cursor: pointer;
+  display: block;
+  font-size: 1.75em;
+  height: 50px;
+  line-height: 50px;
+  margin: 1em auto;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 50px;
+}
+
+.thum {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: initial;
+}
+
+.thum img {
+  display: inline-block;
+  margin: 0 2px 2px;
+  width: 48%;
+  -webkit-transition: all .45s ease-in-out;
+  -moz-transition: all .45s ease-in-out;
+  transition: all .45s ease-in-out;
+}
+
+@media only screen and (min-width: 1024px) {
+  .modal-content {
+    padding: 0;
+  }
+  .thum img {
+    width: 32%;
+    -webkit-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    transition: all .45s ease-in-out;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .thum img {
+    display: block;
+    margin: 0 auto 8px;
+    width: 100%;
+    -webkit-transition: all .45s ease-in-out;
+    -moz-transition: all .45s ease-in-out;
+    transition: all .45s ease-in-out;
+  }
+}
+
+/*modal ends*/

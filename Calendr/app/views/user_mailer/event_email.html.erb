@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Event Notification</h3>
+    <p>
+      You have the following events coming up:<br>
+      
+      <ul>
+      <% @events.each do |event| %>
+        <li><b><%= event.title %></b> (<%= event.event_type %>) on <%= event.start.strftime("%B %d, %Y") %>
+          <br>
+    The location of this event is: <%= event.location %> 
+      <% end %>
+      </ul>
+    </p>
+  </body>
+</html>

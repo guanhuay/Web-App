@@ -1,0 +1,126 @@
+<div id="wrapper">
+ <div class="overlay"></div>
+
+ <!-- Sidebar -->
+ <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+         <li class="sidebar-brand">
+             <a href="#">
+                Calendr
+             </a>
+         </li>
+         <!--<li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
+           <ul class="dropdown-menu" role="menu">
+             <li class="dropdown-header">View</li>
+             <li><a href="#">Week</a></li>
+             <li><a href="#">Month</a></li>
+             <li><a href="#">Year</a></li>
+             <li><a href="#">List</a></li>
+           </ul>
+         </li>-->
+         <% if @user.token.nil? %>
+            <li><%= link_to "Import Google Calendar", oauth2authorize_path(@user) %></li>
+         <% end %>
+         <li>
+             <%= link_to "Settings", edit_user_registration_path %>
+         </li>
+         <li>
+             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+         </li>
+     </ul>
+ </nav>
+ <!-- /#sidebar-wrapper -->
+
+
+
+
+ <!-- Page Content -->
+ <div class="row" id="page-content-wrapper">
+
+           <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+              <span class="hamb-top"></span>
+             <span class="hamb-middle"></span>
+             <span class="hamb-bottom"></span>
+           </button>
+
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-7">
+        <h2></h2>
+        <%= javascript_tag do %>
+          window.rootPath = '<%= j user_url(@user) %>';
+        <% end %>
+        <div id="calendar"></div>
+      </div>
+
+      <div id="upcoming-events" class="col-md-4">
+        <h2>Upcoming Events</h2>
+        <h5 id="new_event_link" class="btn btn-default" onclick="new_event(moment().format('MMMM DD, YYYY @ hh:mm A'), moment().format('MMMM DD, YYYY @ hh:mm A'))">Create new event</h5>
+        <%= render @events %>
+      </div>
+ <!-- /#page-content-wrapper -->
+</div>
+   <!-- /#wrapper -->
+
+
+
+<%= render 'events/create_form' %>
+
+<!-- Modal -->
+<div id="show-event" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        <input type="text" id="event_start">
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   
+
+
+
+
+
+<!-- Modal -->
+<div id="show-map" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!--<%= form_for [@user, @event], remote: true do |f| %>
+          <div class="field"> 
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+          </div>
+        <% end %>-->
+      <!-- save for itr3 -->
+        <!--custom latitude and longitude
+        <div class="form-group"><input type="text" class="form-control" name="name" id="name"></div>
+        <div class="form-group"><input type="text" class="form-control" name="customlng" id="customlng"></div>
+              -->
+        <div id="map" style="height:250px;max-width:100%;max-height:100%;"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="update-location" type="button" class="btn btn-default" data-dismiss="modal">Save Selected Place</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDn4Sa1M49lD6W5EW9LvIUr5yD53mKHcHg&libraries=places"></script> -->

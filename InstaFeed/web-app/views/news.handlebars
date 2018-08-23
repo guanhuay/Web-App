@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your Feed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/news.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div id="top"></div>
+    <a id="demo1" href="#lightSpeedIn">latest</a>
+    {{#if articleid}}
+      <p id="invisible">{{articleid}}</p>
+    {{/if}}
+
+    <div class="row">
+      <div class="card">
+        <div class="card-content">
+          <h1 id="title" class="card-title"></h1>
+          <small id="moreAbout" ></small>
+          <div class="placeholder"></div>
+          <a id="preview" align="center" class="waves-effect waves-light btn on_site">on-site preview</a>
+          <small id="description"></small>
+        </div>
+        <div align="center" id="image" class="card-image"></div>
+      </div>
+      <div id="comment-body" class="col-xs-12 col-md-12"></div>
+      <a id="add-comment" class="waves-effect waves-light btn add-comment" data-toggle="modal" data-target="#basicModal">Comment</a>
+      <a id="reply-comment" class="col-xs-11 col-sm-11 btn btn-success" data-toggle="modal" data-target="#replyModal">Reply</a>
+      <a id="edit-comment" class="col-xs-11 col-sm-11 btn btn-success" data-toggle="modal" data-target="#editModal">Edit</a>
+
+    </div>
+
+
+    <div id="lightSpeedIn">
+      <div id="close" class="close-lightSpeedIn"><span class="glyphicon glyphicon-remove"></span></div>
+           <div id="news">
+             <p>inside news</p>
+            <!-- <iframe src="https://www.w3schools.com"></iframe> -->
+
+           </div>
+    </div>
+
+    <div class="modal" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <!-- <div class="modal-content"> -->
+          <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Leave you comment:</h4>
+          </div> -->
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="comment">Leave you comment:</label>
+                <textarea class="form-control" rows="5" id="comment-area"></textarea>
+                <small class="enteredLen"></small>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="unpost" class="waves-effect waves-light btn" data-dismiss="modal">Discard</button>
+            <button type="button" id="post" class="waves-effect waves-light btn">Post</button>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <div class="modal" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <!-- <div class="modal-content"> -->
+          <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Leave you comment:</h4>
+          </div> -->
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label id="replyLabel" for="comment"></label>
+                <textarea class="form-control" rows="5" id="reply-area"></textarea>
+                <small class="enteredLen"></small>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="unpost2" class="waves-effect waves-light btn" data-dismiss="modal">Discard</button>
+            <button type="button" id="post2" class="waves-effect waves-light btn">Reply</button>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <div class="modal" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <!-- <div class="modal-content"> -->
+          <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Leave you comment:</h4>
+          </div> -->
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label id="editLabel" for="comment">Edit your comment</label>
+                <textarea class="form-control" rows="5" id="edit-area"></textarea>
+                <small class="enteredLen"></small>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="unpost3" class="waves-effect waves-light btn" data-dismiss="modal">Not Now</button>
+            <button type="button" id="post3" class="waves-effect waves-light btn">Done</button>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <br><br><br>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script src="/js/animatedModal.js" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/news.js" type="text/javascript"></script>
+    <!-- <script src="/js/masonry.pkgd.min.js"></script> -->
+  </body>
+</html>

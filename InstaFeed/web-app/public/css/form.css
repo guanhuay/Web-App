@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* for desktop or for mobile phone */
+.container {
+  position:relative;
+  margin:0 auto;
+  width:100%;
+}
+
+@media only screen and (max-width: 732px) {
+  .container {
+    margin: 0 auto;
+    width: 100%; 
+  }
+}
+
+html{
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+label{
+  color: #000 !important;
+}
+.change_ava{
+  margin-bottom: 5px;
+}
+
+.alert-danger{
+  color: red !important;
+  width: 70% !important;
+  margin: 0 auto !important;
+  margin-bottom: 10px !important;
+}
+
+.alert-success{
+  color: green !important;
+  width: 70% !important;
+  margin: 0 auto !important;
+  margin-bottom: 10px !important;
+}
+
+.signinContainer, .signupContainer, .settingContainer{
+  /*margin: 0 auto;*/
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  text-align: center;
+  /*margin-top: 50px;*/
+}
+
+.tab{
+  color: #000;
+  font-size: 20px;
+}
+
+.update_btn{
+  color: #fff !important;
+}
+
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+  text-transform:uppercase;
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+  width: auto;
+  color:#000 !important;
+  text-align: center;
+}
+
+.login-form .group .button{
+/*  border:none;
+  padding:5px 5px;
+  border-radius:10px;
+  background:rgba(255,255,255,.1);*/
+}
+.login-form .group input[data-type="password"]{
+  text-security:disc;
+  -webkit-text-security:disc;
+  color: #000 !important;
+}
+.login-form .group .label{
+  color:#000000;
+  font-size:12px;
+}
+.login-form .group .button{
+/*  background: #1161ee;*/
+}
+
+.form-control{
+  width: auto !important;
+  color: #000 !important;
+  text-align: center !important;
+  margin : 0 auto !important;
+}
+
+select{
+  width: auto !important;
+  color: #000 !important;
+  text-align: center !important;
+  margin : 0 auto !important;
+  height: 30px !important;
+}
+option {
+  color: #000 !important;
+}
+.hr{
+  margin-top:20px;
+}
+
+.foot-lnk{
+  text-align:center;
+}
+
+/*.footer {
+  width: 100%;
+  position: relative;
+  text-align: left;
+  bottom: 0;
+  display: block;
+}*/

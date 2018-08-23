@@ -1,0 +1,30 @@
+{
+  "name": "currency_spider_firebase",
+  "version": "1.0.0",
+  "description": "A currency spider that would save the extract data to firebase server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guanhuay/currency_spider_firebase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guanhuay/currency_spider_firebase/issues"
+  },
+  "homepage": "https://github.com/guanhuay/currency_spider_firebase#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "ejs": "^2.5.7",
+    "eventproxy": "^1.0.0",
+    "express": "^4.16.2",
+    "firebase": "^4.6.2",
+    "firebase-tools": "^3.15.0",
+    "node-schedule": "^1.2.5",
+    "superagent": "^3.8.1"
+  }
+}

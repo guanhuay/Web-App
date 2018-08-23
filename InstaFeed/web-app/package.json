@@ -1,0 +1,39 @@
+{
+  "name": "myproj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "NGFP",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.0",
+    "cartoon-avatar": "^1.0.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "express-passport": "^0.1.0",
+    "express-session": "^1.15.1",
+    "materialize-css": "^0.98.1",
+    "node-pre-gyp": "^0.6.34",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-remember-me": "0.0.1",
+    "pg": "^4.5.6",
+    "pg-hstore": "^2.3.2",
+    "mysql": "^2.13.0",
+    "reload": "^1.1.1",
+    "request": "^2.81.0",
+    "sequelize": "^3.30.2",
+    "socket.io": "^1.7.3",
+    "sqlite3": "^3.1.8",
+    "validator": "^7.0.0"
+  }
+}

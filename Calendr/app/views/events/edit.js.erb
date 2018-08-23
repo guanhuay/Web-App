@@ -1,0 +1,25 @@
+$('#show-event .modal-content').replaceWith("<div class='modal-content'><%= escape_javascript(render 'events/form') %></div>");
+
+var start = $('#show-event #edit_event_start').val();
+var end = $('#show-event #edit_event_end').val();
+
+var startDisplay = moment(start).format('MMMM DD, YYYY @ hh:mm A');
+var endDisplay = moment(end).format('MMMM DD, YYYY @ hh:mm A');
+
+$('#show-event #edit_event_start').val(startDisplay);
+$('#show-event #edit_event_end').val(endDisplay);
+
+
+$('#show-event #edit_event_start, #show-event #edit_event_end').datetimepicker({
+	minuteGrid: 10,
+	dateFormat: 'MM dd, yy',
+	timeFormat: '@ hh:mm tt',
+	stepHour: 1,
+	stepMinute: 5
+});
+
+$('#show-event').modal('show');
+
+$ (function(){
+$ ("#geo-input1").geocomplete()
+});

@@ -1,0 +1,146 @@
+/* for desktop or for mobile phone */
+.container {
+  position:relative;
+  margin:0 auto;
+  width:100%;
+}
+
+@media only screen and (max-width: 736px) {
+.container { width: 100%; }
+}
+
+/* Basic Style */
+html,body,div,span,a,ul,li {
+  border:0;
+  font:inherit;
+  font-size:100%;
+  margin:0;
+  padding:0;
+  vertical-align:baseline;
+}
+
+body {
+   line-height:1;
+ }
+
+ul {
+  list-style:none;
+}
+
+html, body {
+  font:14px/24px "Yanone Kaffeesatz", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+.glyphicon {
+  font-size: 28px;
+  top: 5px;
+}
+
+/* CSS navgation bar */
+.header {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: solid #979797;
+}
+
+.scroll-pre {
+  height: 100px;
+  width: 100%;
+  background-color: #E8E0F4;
+  position: fixed;
+}
+
+.songs, .playlistss, .search {
+    color: #8C8C8C;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: -2px;
+}
+
+.songs-icon, .playlists-icon, .search-icon{
+  text-align: center;
+   color: #000000;
+   margin-top: 3px;
+   margin-bottom: -2px;
+}
+
+.playlistss, .playlists-icon{
+  color: #810082;
+}
+
+.row{
+  margin-top: 55px;
+  background-color: #E8E0F4;
+  left: 0;
+  right: 0;
+  height:100%;
+}
+
+/* addplaylist css*/
+.addplaylist {
+  background-color: #936AC7;
+  margin-top: 15px;
+  margin-left: 2.5%;
+  margin-right: 2.5%; 
+  border-radius: 3px;
+  width: 95%;  
+  height: 35px;
+  text-align: center;
+}
+
+.addplaylist-text {
+  color: #ffffff;
+  font-size: 15px;
+  position: inherit;
+  vertical-align: text-bottom;
+  margin-top: 5px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-right:20px;
+}
+
+.plus-icon {
+  font-size: 13px;
+  vertical-align: top;
+  margin-right: -2px;
+}
+
+
+.coverpage {
+  width: 45px;
+  height: 40px;
+  background: #D8D8D8;
+  border: solid 1px #979797;
+  margin-right: 50px;
+  float: left;
+}
+
+.glyphicon-chevron-right{
+  color: #979797;
+  font-size: 30px; 
+  vertical-align: top;
+  float: right;
+  margin-right: 10px;
+}
+
+.list-box {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid #979797 1px;
+  color: #835797;
+  font-size: 17px;
+  vertical-align: text-bottom;
+  line-height: 40px;
+  font-weight: 200;
+}
+
+.list-box:hover {
+  background-color: purple
+}
+.col-xs-11, .col-md-11{
+  left: 4%;
+}

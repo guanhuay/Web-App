@@ -1,0 +1,4 @@
+node_modules/
+/instafeed.db
+.vagrant/
+

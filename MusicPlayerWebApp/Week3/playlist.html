@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="nav nav-tab">
+              <div class="tablinks" id="defaultOpen"><div class="col-xs-4 col-md-4" >
+                <span class="glyphicon glyphicon-music"></span><br>Library
+              </div></div>
+              <div class="tablinks" id="playlistshandler"><div class="col-xs-4 col-md-4">
+                <span class="glyphicon glyphicon-th-list"></span><br>Playlists
+              </div></div>
+              <div class="tablinks" id="searchhandler"><div class="col-xs-4 col-md-4">
+                <span class="glyphicon glyphicon-search"></span><br>Search
+              </div></div>
+            </div>
+          </nav>
+        </header>
+      </div>
+
+        <div class="row">
+          <!-- placeholder for playlists page -->        
+              <ul id="playlists" class="tabcontent col-xs-12 col-md-12">
+                <li>
+                  <div class="addplaylist col-xs-12 col-md-12" id="playlist_hide">
+                    <div class="addplaylist-text" id="newplaylist"><span class="glyphicon glyphicon-plus plus-icon"></span> Playlist </div>
+                  </div>
+                  <div id="playlist_insert">
+                    <button id="playlist_button">Back</button>
+                  </div>
+                </li>
+              </ul>
+
+
+
+           <!-- placeholder for library page-->
+              <ul id="library" class="tabcontent col-xs-12 col-md-12">
+                <li class="sortwrap col-xs-6 col-md-6">
+                    <button class="sortbyartist" id="defaultSort">Sort by artist</button>
+                </li>
+                <li class="sortwrap col-xs-6 col-md-6">
+                    <button class="sortbytitle" id="titlehandler">Sort by title </button>
+                </li>
+                <li id="libraryinsert1"></li>
+                <li id="libraryinsert2"></li>
+              </ul>
+
+           <!-- placeholder for search page -->
+              <div id="search" class="tabcontent col-xs-12 col-md-12">
+                <div>
+                    <div><form><input type="text" class="searchbar col-xs-12 col-md-12" id="inputtext" placeholder="Search" name="filter"></form></div>
+                </div>
+                <div id="searchinsert"></div>
+              </div>
+        </div>
+    </div>
+    <!-- modal placeholder -->
+    <div id="overlay">
+        <div id="modal_insert_pos">
+          <a href="javascript:void(0)" id="close_modal" >&times;</a>
+          <div id="modal_insert"> Choose playlist </div>
+        </div>
+    </div>
+    <script src="music-app.js"></script>
+  </body>
+</html>

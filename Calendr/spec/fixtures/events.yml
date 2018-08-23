@@ -1,0 +1,12 @@
+important_meeting:
+    title: Important Meeting
+    start: 2016-04-01 12:22:49
+    end: 2016-05-01 12:22:49
+    remind_in_advance: 5
+    user: steve
+
+birthday_party:
+    title: Birthday Party
+    start: 2016-02-23 12:22:49
+    end: 2016-03-25 12:22:49
+    user: steve

@@ -1,0 +1,5 @@
+steve:
+    username: stevio
+    email: steve@email.com
+    remind: 1
+    #events: important_meeting, birthday_party

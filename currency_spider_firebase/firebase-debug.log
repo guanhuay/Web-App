@@ -1,0 +1,43 @@
+[debug] [2017-11-11T11:21:45.668Z] ----------------------------------------------------------------------
+[debug] [2017-11-11T11:21:45.673Z] Command:       /usr/local/Cellar/node/8.9.1/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-11T11:21:45.674Z] CLI Version:   3.15.0
+[debug] [2017-11-11T11:21:45.674Z] Platform:      darwin
+[debug] [2017-11-11T11:21:45.674Z] Node Version:  v8.9.1
+[debug] [2017-11-11T11:21:45.675Z] Time:          Sat Nov 11 2017 03:21:45 GMT-0800 (PST)
+[debug] [2017-11-11T11:21:45.675Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-11T11:21:45.736Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-11T11:21:45.737Z] > authorizing via signed-in user
+[debug] [2017-11-11T11:21:45.739Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-11T11:21:45.739Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/G1eWKy9bSQjTjTBcdv2c251wegAiVBzDD64lAFW_590',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Nov 11 2017 03:21:45 GMT-0800 (PST)
+[debug] [2017-11-11T11:21:45.870Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-11T11:21:46.093Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/icurrency-currency-data  
+ Sat Nov 11 2017 03:21:46 GMT-0800 (PST)
+[debug] [2017-11-11T11:21:46.432Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-11T11:21:46.434Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/icurrency-currency-data/tokens  
+ Sat Nov 11 2017 03:21:46 GMT-0800 (PST)
+[debug] [2017-11-11T11:21:52.018Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/yang/Desktop/currency_spider_firebase'...
+[info] 
+[debug] [2017-11-11T11:21:52.028Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/icurrency-currency-data  
+ Sat Nov 11 2017 03:21:52 GMT-0800 (PST)
+[debug] [2017-11-11T11:21:52.636Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-11T11:21:52.637Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/131668750205/clients/_:getWebAppConfig  
+ Sat Nov 11 2017 03:21:52 GMT-0800 (PST)
+[debug] [2017-11-11T11:21:53.322Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-11T11:21:53.491Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:18)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:106:13)
+    at Server.emit (events.js:208:7)
+    at emitListeningNT (net.js:1378:10)
+    at _combinedTickCallback (internal/process/next_tick.js:135:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.

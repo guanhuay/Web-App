@@ -1,0 +1,12 @@
+
+$('#calendar').fullCalendar('removeEvents', function(event){
+	if (event.id == "<%= @event.id %>"){
+		return true;
+	} else return false;
+});
+
+$('#show-event').modal('hide');
+
+
+$("#upcoming-events").load(location.href + " #upcoming-events>*","");
+

@@ -1,0 +1,54 @@
+<!-- Modal -->
+<%= form_for([@user, @event], remote: true, method: :put) do |f| %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit event</h4>
+      </div>
+      <div class="modal-body">        
+          
+          <div id="errors">
+          </div>
+
+          <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title, :placeholder => @event.title, :required => true %>
+          </div>
+          <div class="field">
+            <%= f.label "Event Activity " %>
+            <%= f.select(:event_type, options_for_select([['Party','liquor_store'], ['Dining','restaurant'], ['Shopping','store']])) %>
+          </div>
+          <div class="field">
+            <%= f.label :start %><br>
+            <%= f.text_field :start, :required => true, :id => 'edit_event_start' %>
+          </div>
+          <div class="field">
+            <%= f.label :end %><br>
+            <%= f.text_field :end, :required => true, :id => 'edit_event_end' %>
+          </div>
+          <div class="field">
+            <%= f.label :notes %><br>
+            <%= f.text_area :notes %>
+          </div>
+          <div class="field">
+            <%= f.label "Remind me" %>
+            <%= f.number_field :remind_in_advance %>
+            days in advance
+          </div>
+          <div class="field"> 
+            <%= f.label :location %>
+            <%= f.text_field :location , :id => 'geo-input1' %>
+          </div>
+          <!-- 
+          <div class="field">
+            <%= f.label :event_frequency %><br>
+            Event repeats every <%= f.number_field :event_frequency %> days
+          </div> -->
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Update", :class => "btn btn-default", :data_loading_text => 'Updating...' %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+<% end %>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>InstaFeed</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/form.css">
+  </head>
+  <body>
+<!-- ******************************************************************* --> 
+  <div class="signinContainer">
+      <label for="tab-1" class="tab">Sign In</label>
+      <div class="login-form">
+        <div class="sign-in-htm">
+        {{#if error_msg}}
+          <div class="alert alert-danger">{{error_msg}}</div>
+        {{/if}}
+        {{#if error}}
+          <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
+        {{#if success_msg}}
+          <div class="alert alert-success">{{success_msg}}</div>
+        {{/if}}
+          <form method="post" action="/signin" role="form">
+          <div class="group form-group">
+            <!-- <label for="user" class="label">Username</label> -->
+            <input type="text" class="form-control" name="username" placeholder="Enter username">
+          </div>
+          <div class="group form-group">
+            <!-- <label for="pass" class="label">Password</label> -->
+            <input type="text" class="form-control input" name="password" data-type="password" placeholder="Enter password">
+          </div>
+          <div class="group">
+            <input type="submit" class="btn waves-effect waves-light" value="Sign In">
+          </div>
+          </form>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <label for="tab-1"><a href="/signup">Not yet a member?</a></label>
+          </div>
+        </div>
+      </div>
+  </div>
+<!-- ******************************************************************* -->    
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script src="/js/tether.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/user.js" type="text/javascript"></script>
+  </body>
+</html>

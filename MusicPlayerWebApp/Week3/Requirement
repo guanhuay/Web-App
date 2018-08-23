@@ -1,0 +1,138 @@
+Requirement
+
+Exercise 3
+
+For this exercise, you'll learn about more browser APIs, HTTP and server-side programming by adding functionality to your Music App UI.
+
+Learning Outcome
+By the end of this exercise, you should be very familiar with making HTTP requests and dealing with their response, creating server-side processes for receiving requests and crafting responses to them, and making requests to API endpoints from the client.
+
+Prerequisites
+You will need node.js/npm installed on your computer for this exercise. You can find instructions for downloading and installing them on the node.js homepage.
+
+If you haven't written node.js before, I recommend reading through some basic node.js tutorials such as this one and this one.
+
+If you haven't created HTTP requests via AJAX before, I recommend reading through this tutorial.
+
+Getting started
+You should build on top of what you have for exercise 2 (if you haven't completed exercise 2, you'll need to do enough of it to satisfy this exercises requirements, but does not need to satisfy the requirements of exercise 2 or any prior exercise).
+
+Download this to get started - it contains a skeleton app.js file where you'll write all of your node.js code, as well as playlist.json and songs.json files that you'll load for the APIs you'll be writing.
+
+Task
+Your objective is to add the following functionality to your music app:
+
+The various app features are accessible via URLs.
+User can add a playlist.
+Your collection of songs and playlists are retrieved from your node.js server.
+Your collection of playlists is persisted to disk by sending the updated playlist data to your node.js server to write.
+There are a few big changes you're making this time around to moving to building a real web application.
+
+Loading files off server instead of directly from disk
+
+Previously, your HTML/CSS/JS loaded from disk by loading your files directly into the browser (for example, via file:your/user/path/index.html).
+
+That is bad practice.
+
+But now that you've learned HTTP and server-side programming, you will be serving your files through your node.js server program instead! (see requirements for names of paths on your server to setup).
+
+Loading data via AJAX requests instead of from a JS file
+
+Previously, you loaded your data via a JS file (music-data.js).
+
+That is bad practice.
+
+Previously, we were just focused on building UI for our application. Now that we have a server, we should be retrieving our data from API endpoints instead!
+
+A hint around this: the easiest way to make this work without drastically changing your program is to pull in the data via AJAX requests and store that data in window.MUSIC_DATA.
+
+Some pseudocode for a basic implementation:
+
+window.MUSIC_DATA = {};
+var songsLoaded = false;
+var playlistsLoaded = false;
+
+var attemptRunApplication = function() {
+    if (songsLoaded == true && playlistsLoaded == true) {
+        // some function you have for executing the JS in your music-app.js from previous exercise:
+        runApplication();
+    }
+};
+
+AjaxRequest('/api/playlists', function(data) {
+    // Transform the response string into a JavaScript object
+    var playlistArray = JSON.parse(data);
+    window.MUSIC_DATA['playlists'] = playlistArray;
+    var songsLoaded = true;
+
+    attemptRunApplication();
+});
+
+AjaxRequest('/api/songs', function(data) {
+    // Transform the response string into a JavaScript object
+    var songsArray = JSON.parse(data);
+    window.MUSIC_DATA['songs'] = songsArray;
+    var playlistsLoaded = true;
+
+    attemptRunApplication();
+});
+
+The downside to this pseudocode is that the user would not see anything on the page until the both the AJAX requests finish getting the data.
+
+A better way would be to render the page (tabs, other UI) without any data, and then when the AJAX requests are complete and the data for songs and playlists is loaded, show populate the DOM with that data (either list of songs or playlists, depending on what tab is being shown to the user). This is not required for the assignment, but I would highly recommend modifying your code for it to work that way.
+
+Going directly to the library or search page via URLs
+
+Previously, there was no way to access the library tab or search tab without first going to the playlist tab and manually navigating. This means you can't send links directly to the library page, which is a bummer.
+
+Because we're building a single-page app, the server should still return the same HTML/CSS/JS files when you navigate to /library, /playlists or /search tabs. The way you load the correct page content will be through JS.
+
+Some pseudo-code:
+
+if (window.location.href.indexOf('/playlist')) {
+    runPlaylistUILogic();
+} else if (window.location.href.indexOf('/library')) {
+    runSongUILogic();
+} else if (window.location.href.indexOf('/search')) {
+    runSearchUILogic();
+}
+You'll also need to make sure that the URLs change when users navigate between tabs. You'll need to use the history API to update the URLs programatically in your click callback functions!
+
+Requirements Checklist
+Backend (node.js) Requirements
+
+Your web app HTML must accessible via http://localhost:3000/, which should redirect to http://localhost:3000/playlists, CSS must be accessible via http://localhost:3000/playlist.css, and Music App JS must be accessible via http://localhost:3000/music-app.js. (1 mark)
+Ensure the correct content-type is set on the HTTP response for the CSS, JS, and redirect.
+Your responses must contain a header setting the cache lifetime to 30 minutes.
+Your HTML must be served from http://localhost:3000/playlists, http://localhost:3000/library and http://localhost:3000/search. It should not serve different HTML based on these paths - showing different content depending on the URL will be done via JavaScript. (1 mark)
+Ensure the correct content-type is set on the HTTP response for the HTML.
+Your responses must contain a header setting the cache lifetime to 30 minutes.
+Create an API that returns the contents of songs.json as a result of a GET request to /api/songs. (1 mark)
+It should be retrieved by loading songs.json from disk using node.js.
+Response must contain the correct JSON content-type header and success status code.
+Create an API that returns the contents of playlists.json as a result of a GET request to /api/playlists. (1 mark)
+It should be retrieved by loading playlists.json from disk using node.js.
+Response must contain the correct JSON content-type header and success status code.
+Create an API for persisting new playlist information via POST to /api/playlists, which contains the playlist data in the POST body. (1 mark)
+This must persist the playlists to disk by overwriting playlists.json, meaning if you restart the application, future GET requests to /api/playlists must respond with any successful user-entered data from past runs of the application.
+The response must contain one of two possible status codes - one for a success, and one for a failure if given invalid JSON in the requests (hint: what status code is used for a client-error?).
+Frontend (HTML/CSS/JS) Requirements
+
+Playlist tab opens when accessing http://localhost:3000/playlists, Library tab opens when accessing http://localhost:3000/library, and Search tab opens when accessing http://localhost:3000/search (hint: see the Location API to determine the page URL to determine what content to render). (1 mark)
+Landing on these different URLs must only show the UI associated with the URL landed on (for example, there must not be a brief showing of the Playlist tab if navigating to http://localhost:3000/library. Your UI should only show one tab being highlighted until a user navigates away). (1 mark)
+Switching between tabs must update the URLs to the ones listed above depending on the tab selected (hint: use the History API). (1 mark)
+Music app data must be loaded via AJAX requests from /api/songs and /api/playlists - you must remove the music-data.js script from your app from exercise 2. You should still continue to have a representation of songs and playlists in memory. (hint - look into JSON.parse for changing a JSON string to in-memory data). (1 mark)
+The following user actions should immediately trigger an AJAX POST to /api/playlists: adding a song to a playlist, adding a playlist (hint: see JSON.stringify to transform JavaScript objects to a JSON string when sending contents via AJAX request). (1 mark)
+Yes, that means you should make the "+ Playlist" button functional. It does not have to conform to mocks - when clicking, you should display a form (or use a JS prompt) somehow to get user data, and after entering, it should go back to the original state. But there is no particular way it has to look and feel in this assignment.
+Total: 10 marks.
+
+Important notes
+Your node.js app must start by running "npm start". Using a different filename will result in a loss of 3 marks. You may use npm to install packages for use on the front-end - if you do this, then make sure your dependencies are properly listed, and a fresh install by running "npm install && npm start" works properly.
+You may not use express.js (node.js backend framework) in this exercise. You will in future exercises, but for this one, we'll focus on dealing with raw request/responses to solidify your understanding of HTTP. Using express will result in a loss of 3 marks.
+You may not use any other external node.js libraries that aren't already provided by the node.js standard library. Using a library that must be installed externally will result in a loss of 3 marks.
+You may not use any synchronous methods from the node.js standard library (basically any method with sync in it). For example, use fs.readFile over fs.readFileSync. Same goes for your client-side JS - no sync methods such as using an sync AJAX request. Using a synchronous method will result in a loss of two marks.
+You may use jQuery or any other JS libraries as you wish in this exercise (hurray!).
+You do not have to worry about response efficiency. By that, I mean don't worry if you are not using streams to respond to requests - sending buffered responses is fine for now (although I highly encourage you to check out streams!).
+Useful links:
+To set headers in node.js, see the following HTTP API: https://nodejs.org/api/http.html#http_response_setheader_name_value
+To load files from disk in node.js, see the Filesystem API
